@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>WatercarbonStone Fund Management</title>
+<meta name="robots" content="noindex,nofollow">
 <meta name="description" content="WatercarbonStone is a proprietary hedge fund management company, incorporated in the United Kingdom in 2018.">
 <style>
 :root{
@@ -27,6 +28,7 @@ header.scrolled{background:rgba(10,20,40,.92);backdrop-filter:blur(10px);-webkit
 .nav{display:flex;align-items:center;justify-content:space-between;height:76px}
 .brand img{display:block;height:46px;width:auto}
 .sm{display:none}
+.preview{position:fixed;left:16px;bottom:16px;z-index:30;background:rgba(10,20,40,.92);border:1px solid var(--line);color:var(--muted);font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:8px 14px;border-radius:999px;pointer-events:none}
 nav ul{display:flex;gap:34px;list-style:none}
 nav a{font-size:13px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;color:var(--muted);transition:color .2s;padding:8px 0;position:relative}
 nav a:hover{color:var(--ink)}
@@ -147,6 +149,7 @@ footer a:hover{color:var(--ink)}
 </head>
 <body>
 
+<div class="preview" aria-hidden="true">Design preview</div>
 <header id="top">
   <div class="wrap nav">
     <a class="brand" href="#top" aria-label="WatercarbonStone Fund Management"><img src="assets/logo.png" alt="WatercarbonStone Fund Management"></a>

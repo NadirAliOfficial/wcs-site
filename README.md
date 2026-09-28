@@ -4,6 +4,8 @@ A modern, responsive redesign of the [WatercarbonStone Fund Management](http://w
 
 > Design preview. The contact form is not connected to a backend yet, and the captcha uses Cloudflare's public test key. See [Going live](#going-live).
 
+The published preview carries a "Design preview" tag and a `noindex` meta tag so it is not mistaken for the official site or picked up by search engines.
+
 ## What changed
 
 - New layout and typography: a serif headline face, a navy and light-blue palette taken from the existing logo, and a light section for the fund to give the page rhythm.
