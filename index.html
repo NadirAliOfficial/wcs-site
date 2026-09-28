@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WatercarbonStone Fund Management</title>
+<meta name="description" content="WatercarbonStone is a proprietary hedge fund management company, incorporated in the United Kingdom in 2018.">
+<style>
+:root{
+  --bg:#0a1428; --bg2:#0e1c38; --panel:#12244a; --ink:#eaf1fb; --muted:#a3b3cf;
+  --accent:#5bb8e0; --accent-deep:#2f8fbf; --line:rgba(255,255,255,.12);
+  --paper:#f3f6fb; --paper-ink:#0d1b36; --paper-muted:#4d5f80; --paper-line:#d6deec;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --max:1120px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.65;font-size:17px;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+
+/* Header */
+header{position:fixed;inset:0 0 auto 0;z-index:20;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+header.scrolled{background:rgba(10,20,40,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-color:var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px}
+.brand img{display:block;height:46px;width:auto}
+.sm{display:none}
+nav ul{display:flex;gap:34px;list-style:none}
+nav a{font-size:13px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;color:var(--muted);transition:color .2s;padding:8px 0;position:relative}
+nav a:hover{color:var(--ink)}
+nav a::after{content:"";position:absolute;left:0;bottom:2px;height:1px;width:0;background:var(--accent);transition:width .25s}
+nav a:hover::after{width:100%}
+
+/* Hero */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;
+  background:radial-gradient(900px 600px at 82% 40%,rgba(91,184,224,.14),transparent 60%),linear-gradient(180deg,#0a1428 0%,#0b1834 100%)}
+.hero .wrap{position:relative;z-index:2;padding-top:110px;padding-bottom:90px}
+.eyebrow{font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);margin-bottom:26px;display:flex;align-items:center;gap:14px}
+.eyebrow::before{content:"";width:36px;height:1px;background:var(--accent)}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(46px,7.2vw,92px);line-height:1.04;letter-spacing:-.015em;max-width:11ch}
+h1 em{font-style:italic;color:var(--accent)}
+.lede{margin-top:30px;max-width:520px;color:var(--muted);font-size:19px}
+.cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:40px}
+.btn{display:inline-block;padding:15px 30px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border:1px solid var(--accent);transition:all .2s;cursor:pointer;font-family:var(--sans);background:none;color:var(--ink)}
+.btn.solid{background:var(--accent);color:#06111f;font-weight:600}
+.btn.solid:hover{background:#7ccbee;border-color:#7ccbee}
+.btn.ghost:hover{background:rgba(91,184,224,.12)}
+.arches{position:absolute;right:-4%;top:50%;transform:translateY(-50%);width:min(58vw,760px);height:auto;z-index:1;opacity:.95;pointer-events:none}
+.scrollcue{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:2;width:1px;height:54px;background:linear-gradient(var(--accent),transparent)}
+
+/* Facts */
+.facts{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.facts .wrap{display:grid;grid-template-columns:repeat(3,1fr)}
+.fact{padding:34px 28px;border-left:1px solid var(--line)}
+.fact:first-child{border-left:0;padding-left:0}
+.fact b{display:block;font-family:var(--serif);font-weight:400;font-size:28px;color:var(--ink);margin-bottom:6px}
+.fact span{font-size:14px;color:var(--muted);line-height:1.5;display:block}
+
+/* Sections */
+section{padding:120px 0}
+.kicker{font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(34px,4.6vw,54px);line-height:1.1;letter-spacing:-.01em}
+.split{display:grid;grid-template-columns:5fr 7fr;gap:72px;align-items:start}
+.prose p{color:var(--muted);margin-bottom:22px}
+.prose p:first-child{color:var(--ink);font-size:20px;line-height:1.6}
+.risk{margin-top:34px;border-left:2px solid var(--accent);padding:6px 0 6px 22px;color:var(--ink);font-size:15.5px}
+.risk small{display:block;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+
+/* Photos: greyscale with a brand-blue tint so stock imagery matches the palette */
+.photo{position:relative;overflow:hidden;background:var(--panel);margin-top:44px}
+.photo img{display:block;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.08) brightness(.82)}
+.photo::after{content:"";position:absolute;inset:0;background:linear-gradient(160deg,#2f8fbf,#0e2a5a);mix-blend-mode:color;opacity:.9}
+.photo::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,transparent 55%,rgba(10,20,40,.55))}
+.photo.tall{aspect-ratio:4/5}
+.photo.square{aspect-ratio:1/1;margin-top:0}
+.fundhead{display:grid;grid-template-columns:7fr 5fr;gap:64px;align-items:center}
+
+/* Fund (light) */
+#fund{background:var(--paper);color:var(--paper-ink)}
+#fund .kicker{color:var(--accent-deep)}
+#fund .head{max-width:760px}
+#fund .head p{margin-top:22px;color:var(--paper-muted);font-size:19px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:64px}
+.card{background:#fff;border:1px solid var(--paper-line);padding:34px 30px 36px;position:relative;transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 18px 40px -22px rgba(13,27,54,.35)}
+.card .n{font-family:var(--serif);font-size:15px;color:var(--accent-deep);letter-spacing:.1em}
+.card h3{font-family:var(--serif);font-weight:400;font-size:25px;line-height:1.25;margin:16px 0 14px}
+.card p{color:var(--paper-muted);font-size:16px}
+.factors{margin-top:64px;padding-top:44px;border-top:1px solid var(--paper-line);display:grid;grid-template-columns:5fr 7fr;gap:56px;align-items:start}
+.factors h3{font-family:var(--serif);font-weight:400;font-size:26px;line-height:1.3}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{border:1px solid var(--paper-line);background:#fff;padding:9px 18px;font-size:14.5px;color:var(--paper-ink);border-radius:999px}
+.software{margin-top:40px;color:var(--paper-muted);max-width:820px}
+
+/* Contact */
+#contact{background:linear-gradient(180deg,#0a1428,#0c1a36)}
+form{display:grid;gap:22px}
+.field{display:grid;gap:8px}
+label{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+input,textarea{width:100%;background:transparent;border:0;border-bottom:1px solid rgba(255,255,255,.28);color:var(--ink);font:inherit;font-size:17px;padding:10px 0 12px;border-radius:0;transition:border-color .2s}
+input:focus,textarea:focus{outline:none;border-color:var(--accent)}
+textarea{min-height:120px;resize:vertical}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.note{font-size:14px;color:var(--accent);min-height:20px}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.captcha{min-height:65px}
+
+footer{border-top:1px solid var(--line);padding:38px 0;background:#08111f}
+footer .wrap{display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:space-between;align-items:center;font-size:13.5px;color:var(--muted)}
+footer a{text-decoration:none;margin-left:18px}
+footer a:hover{color:var(--ink)}
+
+/* Reveal */
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .rv{opacity:1;transform:none;transition:none}
+  .card,.btn,nav a::after{transition:none}
+}
+
+/* Responsive */
+@media (max-width:900px){
+  .split,.factors,.fundhead{grid-template-columns:1fr;gap:34px}
+  .photo.square{max-width:420px}
+  .photo.tall{aspect-ratio:4/3}
+  .cards{grid-template-columns:1fr}
+  .facts .wrap{grid-template-columns:1fr}
+  .fact{border-left:0;border-top:1px solid var(--line);padding:24px 0}
+  .fact:first-child{border-top:0}
+  section{padding:84px 0}
+  .arches{opacity:.35;width:120vw;right:-30%}
+  h1{max-width:none}
+  .row{grid-template-columns:1fr;gap:22px}
+}
+@media (max-width:560px){
+  body{font-size:16px}
+  .wrap{padding:0 20px}
+  .nav{height:66px}.brand img{height:38px}
+  .lg{display:none}.sm{display:inline}
+  nav ul{gap:18px}nav a{font-size:11px;letter-spacing:.1em;white-space:nowrap}
+  .eyebrow{font-size:11px;letter-spacing:.16em;gap:10px}.eyebrow::before{width:22px}
+}
+</style>
+</head>
+<body>
+
+<header id="top">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="WatercarbonStone Fund Management"><img src="assets/logo.png" alt="WatercarbonStone Fund Management"></a>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#fund"><span class="lg">Hedge Fund Solutions</span><span class="sm">The Fund</span></a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="hero">
+  <svg class="arches" viewBox="0 0 760 760" fill="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5bb8e0" stop-opacity=".55"/><stop offset="1" stop-color="#5bb8e0" stop-opacity="0"/></linearGradient>
+      <linearGradient id="g2" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#2f8fbf" stop-opacity=".5"/><stop offset="1" stop-color="#2f8fbf" stop-opacity="0"/></linearGradient>
+    </defs>
+    <path d="M120 720V330C120 190 230 80 370 80" stroke="url(#g1)" stroke-width="1.5"/>
+    <path d="M200 720V350C200 240 280 150 380 150" stroke="url(#g1)" stroke-width="1.5"/>
+    <path d="M280 720V380C280 300 330 230 390 230" stroke="url(#g1)" stroke-width="1.5"/>
+    <path d="M370 80C520 80 640 200 640 350V720" stroke="url(#g2)" stroke-width="1.5"/>
+    <path d="M380 150C490 150 560 240 560 350V720" stroke="url(#g2)" stroke-width="1.5"/>
+    <path d="M390 230C450 230 480 290 480 370V720" stroke="url(#g2)" stroke-width="1.5"/>
+    <path d="M370 80V720" stroke="#5bb8e0" stroke-opacity=".35" stroke-width="1"/>
+    <circle cx="370" cy="80" r="4" fill="#5bb8e0"/>
+  </svg>
+  <div class="wrap">
+    <p class="eyebrow">Fund Management &middot; United Kingdom</p>
+    <h1>Invest in <em>your</em> future</h1>
+    <p class="lede">A proprietary hedge fund management company engaged in the trading of commodities, futures, options and derivatives.</p>
+    <div class="cta">
+      <a class="btn solid" href="#fund">Hedge Fund Solutions</a>
+      <a class="btn ghost" href="#contact">Contact Us</a>
+    </div>
+  </div>
+  <div class="scrollcue" aria-hidden="true"></div>
+</div>
+
+<div class="facts">
+  <div class="wrap">
+    <div class="fact rv"><b>Since 2018</b><span>Incorporated as a United Kingdom limited liability company</span></div>
+    <div class="fact rv"><b>Proprietary</b><span>Investment programs run by the Fund Manager</span></div>
+    <div class="fact rv"><b>Open books</b><span>Books and records held at the Fund Manager's offices and available for inspection</span></div>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap split">
+    <div class="rv">
+      <p class="kicker">About WatercarbonStone</p>
+      <h2>A proprietary hedge fund manager</h2>
+      <div class="photo tall"><img src="assets/about.jpg" alt="" loading="lazy" width="900" height="900"></div>
+    </div>
+    <div class="prose rv">
+      <p>WatercarbonStone (the Fund Manager) is a proprietary hedge fund management company. Through its investment programs, WatercarbonStone will engage in speculative trading of futures, options, swaps and derivatives including contracts offered on commodity exchanges and overseas futures exchanges.</p>
+      <p>WatercarbonStone is incorporated as a United Kingdom limited liability company since 2018.</p>
+      <p>The Fund Manager's books and records are held at its main place of business and will be made available for inspection at the Fund Manager's offices.</p>
+      <div class="risk"><small>Risk warning</small>Investing in commodities, futures or derivatives presents the risk of losses exceeding investment.</div>
+    </div>
+  </div>
+</section>
+
+<section id="fund">
+  <div class="wrap">
+    <div class="fundhead">
+      <div class="head rv">
+        <p class="kicker">Hedge Fund Solutions</p>
+        <h2>The Piano Fund</h2>
+        <p>The Piano Fund is a market-neutral specialist hedge fund that uses market-neutral strategies to trade commodities and liquid stock options of some of the largest companies in the world.</p>
+      </div>
+      <div class="photo square rv"><img src="assets/fund.jpg" alt="" loading="lazy" width="900" height="900"></div>
+    </div>
+
+    <div class="cards">
+      <article class="card rv">
+        <span class="n">01</span>
+        <h3>Direction-neutral strategy</h3>
+        <p>With a long view, our direction neutral strategy ensures annual prolificacy even when stock collapse send shockwaves throughout the rest of the market and drag a wide encompassing index of assets down. In a bull market, the strategy really stands out with consistent positive absolute returns.</p>
+      </article>
+      <article class="card rv">
+        <span class="n">02</span>
+        <h3>Commodities and calendar spreads</h3>
+        <p>The Piano Fund engages trading in longer term commodities and futures calendar spreads including the Crude Oil markets, throughout the structure of the oil complex forward curve.</p>
+      </article>
+      <article class="card rv">
+        <span class="n">03</span>
+        <h3>AI assisted active management</h3>
+        <p>Fundamentally a discretionary model, trading is based on our Artificial Intelligence Assisted Active Management System (AIAAMS).</p>
+      </article>
+    </div>
+
+    <div class="factors">
+      <h3 class="rv">Trading is determined by consistent fundamental analysis of several factors</h3>
+      <div class="rv">
+        <div class="chips">
+          <span class="chip">Geopolitical news</span>
+          <span class="chip">Supply side factors</span>
+          <span class="chip">Demand side factors</span>
+          <span class="chip">Inventory levels</span>
+          <span class="chip">Weather</span>
+          <span class="chip">OPEC events</span>
+          <span class="chip">NON-OPEC events</span>
+        </div>
+        <p class="software" style="margin-top:28px">Typically, we combine fundamental analysis with technical analysis for trend anticipation, profitable trading opportunity identification and deal capture. WatercarbonStone also use customised proprietary software for specialist statistical and analytical functions which provides trade signals, indicating actionable position entry and exit. Market statistics, trade volume and price action are constantly and consistently analysed by our proprietary software using technical algorithms, indicators and formulas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap split">
+    <div class="rv">
+      <p class="kicker">Contact Us</p>
+      <h2>Get in touch</h2>
+    </div>
+    <form class="rv" id="cform" novalidate>
+      <div class="row">
+        <div class="field"><label for="n">Name</label><input id="n" name="name" autocomplete="name"></div>
+        <div class="field"><label for="e">Email</label><input id="e" name="email" type="email" autocomplete="email"></div>
+      </div>
+      <div class="field"><label for="t">Telephone</label><input id="t" name="tel" type="tel" autocomplete="tel"></div>
+      <div class="field"><label for="m">Message</label><textarea id="m" name="message"></textarea></div>
+      <div class="hp" aria-hidden="true"><label for="w">Leave this empty</label><input id="w" name="website" tabindex="-1" autocomplete="off"></div>
+      <div class="captcha cf-turnstile" data-sitekey="1x00000000000000000000AA" data-theme="dark"></div>
+      <div><button class="btn solid" type="submit">Send Message</button></div>
+      <p class="note" id="note" role="status"></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 WatercarbonStone</span>
+    <span><a href="#">T&amp;Cs</a><a href="#">Policies</a></span>
+  </div>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+var h=document.querySelector('header');
+function s(){h.classList.toggle('scrolled',window.scrollY>30)}
+s();addEventListener('scroll',s,{passive:true});
+var els=document.querySelectorAll('.rv');
+if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12});
+  els.forEach(function(el){io.observe(el)});
+}else{els.forEach(function(el){el.classList.add('in')})}
+document.getElementById('cform').addEventListener('submit',function(ev){
+  ev.preventDefault();
+  var note=document.getElementById('note');
+  if(document.getElementById('w').value){return}
+  var tok=document.querySelector('[name="cf-turnstile-response"]');
+  if(!tok||!tok.value){note.textContent='Please complete the verification first.';return}
+  note.textContent='Design preview only. This form is not connected yet.';
+});
+</script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+</body>
+</html>
