@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>WatercarbonStone Fund Management</title>
+<title>Marubusso Management (U.K) Ltd</title>
 <meta name="robots" content="noindex,nofollow">
-<meta name="description" content="WatercarbonStone is a proprietary hedge fund management company, incorporated in the United Kingdom in 2018.">
+<meta name="description" content="Marubusso Capital is a London based investment firm focused on private equity, private credit, real estate and special situation investment financing.">
 <style>
 :root{
   --bg:#0a1428; --bg2:#0e1c38; --panel:#12244a; --ink:#eaf1fb; --muted:#a3b3cf;
@@ -26,7 +26,11 @@ a{color:inherit}
 header{position:fixed;inset:0 0 auto 0;z-index:20;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
 header.scrolled{background:rgba(10,20,40,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-color:var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:76px}
-.brand img{display:block;height:46px;width:auto}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand img{display:block;height:40px;width:auto}
+.brand-text{display:flex;flex-direction:column;line-height:1.15}
+.brand-title{font-family:var(--serif);font-size:18px;font-weight:600;letter-spacing:.04em;color:var(--ink)}
+.brand-sub{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 .sm{display:none}
 .preview{position:fixed;left:16px;bottom:16px;z-index:30;background:rgba(10,20,40,.92);border:1px solid var(--line);color:var(--muted);font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:8px 14px;border-radius:999px;pointer-events:none}
 nav ul{display:flex;gap:34px;list-style:none}
@@ -140,7 +144,8 @@ footer a:hover{color:var(--ink)}
 @media (max-width:560px){
   body{font-size:16px}
   .wrap{padding:0 20px}
-  .nav{height:66px}.brand img{height:38px}
+  .nav{height:66px}.brand img{height:30px}
+  .brand-title{font-size:15px}.brand-sub{font-size:8.5px}
   .lg{display:none}.sm{display:inline}
   nav ul{gap:18px}nav a{font-size:11px;letter-spacing:.1em;white-space:nowrap}
   .eyebrow{font-size:11px;letter-spacing:.16em;gap:10px}.eyebrow::before{width:22px}
@@ -152,7 +157,13 @@ footer a:hover{color:var(--ink)}
 <div class="preview" aria-hidden="true">Design preview</div>
 <header id="top">
   <div class="wrap nav">
-    <a class="brand" href="#top" aria-label="WatercarbonStone Fund Management"><img src="assets/logo.png" alt="WatercarbonStone Fund Management"></a>
+    <a class="brand" href="#top" aria-label="Marubusso Management (U.K) Ltd">
+      <img src="assets/mark.png" alt="Marubusso Management (U.K) Ltd">
+      <div class="brand-text">
+        <span class="brand-title">Marubusso</span>
+        <span class="brand-sub">Management (U.K) Ltd</span>
+      </div>
+    </a>
     <nav aria-label="Primary">
       <ul>
         <li><a href="#about">About</a></li>
@@ -180,9 +191,9 @@ footer a:hover{color:var(--ink)}
     <circle cx="370" cy="80" r="4" fill="#5bb8e0"/>
   </svg>
   <div class="wrap">
-    <p class="eyebrow">Fund Management &middot; United Kingdom</p>
+    <p class="eyebrow">London &middot; United Kingdom</p>
     <h1>Invest in <em>your</em> future</h1>
-    <p class="lede">A proprietary hedge fund management company engaged in the trading of commodities, futures, options and derivatives.</p>
+    <p class="lede">Marubusso Capital is a London based investment firm focused on private equity, private credit, real estate and special situation investment financing.</p>
     <div class="cta">
       <a class="btn solid" href="#fund">Hedge Fund Solutions</a>
       <a class="btn ghost" href="#contact">Contact Us</a>
@@ -193,7 +204,7 @@ footer a:hover{color:var(--ink)}
 
 <div class="facts">
   <div class="wrap">
-    <div class="fact rv"><b>Since 2018</b><span>Incorporated as a United Kingdom limited liability company</span></div>
+    <div class="fact rv"><b>United Kingdom</b><span>Incorporated as a UK limited liability company</span></div>
     <div class="fact rv"><b>Proprietary</b><span>Investment programs run by the Fund Manager</span></div>
     <div class="fact rv"><b>Open books</b><span>Books and records held at the Fund Manager's offices and available for inspection</span></div>
   </div>
@@ -202,13 +213,14 @@ footer a:hover{color:var(--ink)}
 <section id="about">
   <div class="wrap split">
     <div class="rv">
-      <p class="kicker">About WatercarbonStone</p>
-      <h2>A proprietary hedge fund manager</h2>
+      <p class="kicker">About Marubusso</p>
+      <h2>A London based investment firm</h2>
       <div class="photo tall"><img src="assets/about.jpg" alt="" loading="lazy" width="900" height="900"></div>
     </div>
     <div class="prose rv">
-      <p>WatercarbonStone (the Fund Manager) is a proprietary hedge fund management company. Through its investment programs, WatercarbonStone will engage in speculative trading of futures, options, swaps and derivatives including contracts offered on commodity exchanges and overseas futures exchanges.</p>
-      <p>WatercarbonStone is incorporated as a United Kingdom limited liability company since 2018.</p>
+      <p>Marubusso Capital is a London based investment firm focused on private equity, private credit, real estate and special situation investment financing.</p>
+      <p>Marubusso Management (U.K) Ltd (the Fund Manager) is a proprietary hedge fund management company. Through its investment programs, it engages in speculative trading of futures, options, swaps and derivatives including contracts offered on commodity exchanges and overseas futures exchanges.</p>
+      <p>Marubusso Management (U.K) Ltd is incorporated as a United Kingdom limited liability company.</p>
       <p>The Fund Manager's books and records are held at its main place of business and will be made available for inspection at the Fund Manager's offices.</p>
       <div class="risk"><small>Risk warning</small>Investing in commodities, futures or derivatives presents the risk of losses exceeding investment.</div>
     </div>
@@ -220,8 +232,8 @@ footer a:hover{color:var(--ink)}
     <div class="fundhead">
       <div class="head rv">
         <p class="kicker">Hedge Fund Solutions</p>
-        <h2>The Piano Fund</h2>
-        <p>The Piano Fund is a market-neutral specialist hedge fund that uses market-neutral strategies to trade commodities and liquid stock options of some of the largest companies in the world.</p>
+        <h2>Marubusso Fund LLC</h2>
+        <p>Marubusso Fund LLC is a market-neutral specialist hedge fund that uses market-neutral strategies to trade commodities and liquid stock options of some of the largest companies in the world.</p>
       </div>
       <div class="photo square rv"><img src="assets/fund.jpg" alt="" loading="lazy" width="900" height="900"></div>
     </div>
@@ -230,12 +242,12 @@ footer a:hover{color:var(--ink)}
       <article class="card rv">
         <span class="n">01</span>
         <h3>Direction-neutral strategy</h3>
-        <p>With a long view, our direction neutral strategy ensures annual prolificacy even when stock collapse send shockwaves throughout the rest of the market and drag a wide encompassing index of assets down. In a bull market, the strategy really stands out with consistent positive absolute returns.</p>
+        <p>With a long view, our direction neutral strategy ensures annual prolificacy even when stock collapses send shockwaves throughout the rest of the market and drag a wide encompassing index of assets down. In a bull market, the strategy really stands out with consistent positive absolute returns.</p>
       </article>
       <article class="card rv">
         <span class="n">02</span>
         <h3>Commodities and calendar spreads</h3>
-        <p>The Piano Fund engages trading in longer term commodities and futures calendar spreads including the Crude Oil markets, throughout the structure of the oil complex forward curve.</p>
+        <p>Marubusso Fund LLC engages trading in longer term commodities and futures calendar spreads including the Crude Oil markets, throughout the structure of the oil complex forward curve.</p>
       </article>
       <article class="card rv">
         <span class="n">03</span>
@@ -256,7 +268,7 @@ footer a:hover{color:var(--ink)}
           <span class="chip">OPEC events</span>
           <span class="chip">NON-OPEC events</span>
         </div>
-        <p class="software" style="margin-top:28px">Typically, we combine fundamental analysis with technical analysis for trend anticipation, profitable trading opportunity identification and deal capture. WatercarbonStone also use customised proprietary software for specialist statistical and analytical functions which provides trade signals, indicating actionable position entry and exit. Market statistics, trade volume and price action are constantly and consistently analysed by our proprietary software using technical algorithms, indicators and formulas.</p>
+        <p class="software" style="margin-top:28px">Typically, we combine fundamental analysis with technical analysis for trend anticipation, profitable trading opportunity identification and deal capture. Marubusso Management (U.K) Ltd also uses customised proprietary software for specialist statistical and analytical functions which provides trade signals, indicating actionable position entry and exit. Market statistics, trade volume and price action are constantly and consistently analysed by our proprietary software using technical algorithms, indicators and formulas.</p>
       </div>
     </div>
   </div>
@@ -286,7 +298,7 @@ footer a:hover{color:var(--ink)}
 
 <footer>
   <div class="wrap">
-    <span>&copy; 2026 WatercarbonStone</span>
+    <span>&copy; 2026 Marubusso Management (U.K) Ltd</span>
     <span><a href="#">T&amp;Cs</a><a href="#">Policies</a></span>
   </div>
 </footer>

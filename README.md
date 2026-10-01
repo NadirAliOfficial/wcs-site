@@ -1,6 +1,6 @@
-# WatercarbonStone Website Redesign
+# Marubusso Management (U.K) Ltd Website Redesign
 
-A modern, responsive redesign of the [WatercarbonStone Fund Management](http://watercarbonstone.com/) website. Static HTML, CSS and a small amount of vanilla JavaScript. No build step, no dependencies.
+A modern, responsive redesign of the Marubusso Management (U.K) Ltd website. Static HTML, CSS and a small amount of vanilla JavaScript. No build step, no dependencies.
 
 > Design preview. The contact form is not connected to a backend yet, and the captcha uses Cloudflare's public test key. See [Going live](#going-live).
 
@@ -8,23 +8,22 @@ The published preview carries a "Design preview" tag and a `noindex` meta tag so
 
 ## What changed
 
-- New layout and typography: a serif headline face, a navy and light-blue palette taken from the existing logo, and a light section for the fund to give the page rhythm.
+- New layout and typography: a serif headline face, a navy and light-blue palette taken from the brand mark, and a light section for the fund to give the page rhythm.
 - The dated stock photos now carry a navy tint so they match the palette.
 - Risk warning set apart as its own callout.
 - Sticky header, subtle scroll reveal, keyboard focus styles, and `prefers-reduced-motion` support.
 - Fully responsive down to phone width.
 - Contact form protected by a captcha (Cloudflare Turnstile) and a honeypot field.
 
-All copy is kept word for word from the current site, because this is a regulated business and the wording should not change without the firm's sign-off. The current text has one typo worth fixing: "stock collapse send shockwaves" (probably "stock collapses send shockwaves").
-
 ## Structure
 
 ```
 index.html      Page markup, styles and script (single file)
 assets/
-  logo.png      WatercarbonStone logo
+  mark.png      Marubusso brand mark
+  logo.png      Original logo asset
   about.jpg     About section photo
-  fund.jpg      Piano Fund section photo
+  fund.jpg      Marubusso Fund section photo
 ```
 
 ## Run locally
@@ -77,4 +76,4 @@ The hidden `website` field is a honeypot: real visitors never see it, so a fille
 
 ## Ownership
 
-The logo, photographs and text belong to WatercarbonStone. All rights reserved. This repository is private and intended for review by the firm.
+The logo, photographs and text belong to Marubusso Management (U.K) Ltd. All rights reserved. This repository is private and intended for review by the firm.
